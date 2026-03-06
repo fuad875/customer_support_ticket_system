@@ -28,6 +28,15 @@ const handleInprogress= (ticket) => {
   setSelectedid(select =>({...select,[ticket.id]:true}))
   setInProgress(select => [...select,ticket])
 }
+  
+const handleResolved=(ticket) =>{
+  setResolvedTickests(select => [...select,ticket]);
+  setInProgress(select => 
+    select.filter(sel =>sel.id !== ticket.id)
+  )
+}
+
+
 
   return (
     <>
@@ -99,7 +108,7 @@ const handleInprogress= (ticket) => {
             <div className="absolute inset-0 flex flex-col justify-center items-center">
               <div className="text-center">
                 <h2 className="text-2xl">Resolved</h2>
-                <span className="text-3xl font-bold">0</span>
+                <span className="text-3xl font-bold">{resolvedTickets.length}</span>
               </div>
             </div>
           </div>
@@ -113,6 +122,9 @@ const handleInprogress= (ticket) => {
         ticketPromises={ticketPromises} 
         handleInprogress={handleInprogress}
         inProgress={inProgress}
+        resolvedTickets={resolvedTickets}
+        handleResolved={handleResolved}
+
         ></CustomersTicket>
       </Suspense>
      

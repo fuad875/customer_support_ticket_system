@@ -1,7 +1,7 @@
 import React, { use } from 'react';
 import CustomerCard from '../CustomerCard/CustomerCard';
 
-const CustomersTicket = ({ ticketPromises,handleInprogress,inProgress }) => {
+const CustomersTicket = ({ ticketPromises,handleInprogress,inProgress,resolvedTickets,handleResolved}) => {
 
     const customerData = use(ticketPromises)
     // console.log(customerData);
@@ -16,6 +16,9 @@ const CustomersTicket = ({ ticketPromises,handleInprogress,inProgress }) => {
                          customer={customer}
                           handleInprogress={handleInprogress}
                           inProgress={inProgress}
+                           resolvedTickets={resolvedTickets}
+                           handleResolved={handleResolved}
+
                           ></CustomerCard>)
                     }
                 </div>
@@ -29,9 +32,9 @@ const CustomersTicket = ({ ticketPromises,handleInprogress,inProgress }) => {
                 {
                     inProgress.map(ticket =>
                     (
-                        <div key={ticket.id} className="border p-2 mb-2 rounded">
+                        <div key={ticket.id} className="card  p-2 mb-2 rounded">
                         <p>{ticket.title}</p>
-                        <button className='btn btn-sm'>Complete</button>
+                        <button onClick={()=>handleResolved(ticket)} className='btn btn-sm btn-primary'>Complete</button>
                         </div>
                 
                     
@@ -40,9 +43,18 @@ const CustomersTicket = ({ ticketPromises,handleInprogress,inProgress }) => {
                 }
                 </div>
 
-               <div>
+               <div card>
                 <h1 className="font-bold mb-2">Resovle Task</h1>
                 <p>Select a ticket to add to a Task Status</p>
+                {
+                    resolvedTickets.map(ticket =>
+                     
+                     <div key={ticket.id} className="card  p-2 mb-2 rounded">
+                      {ticket.title}
+                     </div>
+                    
+                    )
+                }
                 </div>
             </div>
 
