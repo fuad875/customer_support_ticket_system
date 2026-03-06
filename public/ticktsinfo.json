@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "Login page not loading",
+    "description": "User cannot access the login page from the homepage.",
+    "customer": "Ayan Rahman",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-01T09:30:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Password reset email not received",
+    "description": "Customer tried resetting password but did not receive the email.",
+    "customer": "Sara Ahmed",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-03-01T11:15:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Payment failed during checkout",
+    "description": "Transaction fails when paying with credit card.",
+    "customer": "Tanvir Hasan",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "2026-03-02T08:20:00Z"
+  },
+  {
+    "id": 4,
+    "title": "Profile picture upload error",
+    "description": "Users cannot upload profile images larger than 1MB.",
+    "customer": "Nusrat Jahan",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2026-03-02T10:45:00Z"
+  },
+  {
+    "id": 5,
+    "title": "Search feature not returning results",
+    "description": "Search bar returns empty results for valid queries.",
+    "customer": "Imran Hossain",
+    "priority": "Medium",
+    "status": "In Progress",
+    "createdAt": "2026-03-02T14:10:00Z"
+  },
+  {
+    "id": 6,
+    "title": "Mobile layout broken",
+    "description": "Website layout overlaps on small mobile screens.",
+    "customer": "Farhana Islam",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-03T09:00:00Z"
+  },
+  {
+    "id": 7,
+    "title": "Notification settings not saving",
+    "description": "User changes notification settings but they revert after refresh.",
+    "customer": "Rafiq Karim",
+    "priority": "Medium",
+    "status": "Resolved",
+    "createdAt": "2026-03-03T12:30:00Z"
+  },
+  {
+    "id": 8,
+    "title": "Slow dashboard loading",
+    "description": "Dashboard takes more than 10 seconds to load.",
+    "customer": "Shamima Akter",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "2026-03-04T08:50:00Z"
+  },
+  {
+    "id": 9,
+    "title": "Unable to download invoice",
+    "description": "Invoice download button does not respond.",
+    "customer": "Mahmudul Hasan",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-03-04T10:10:00Z"
+  },
+  {
+    "id": 10,
+    "title": "Error 500 on settings page",
+    "description": "Internal server error appears when opening settings.",
+    "customer": "Sadia Rahman",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-05T07:40:00Z"
+  },
+  {
+    "id": 11,
+    "title": "Email notifications delayed",
+    "description": "Users receive notification emails hours later.",
+    "customer": "Jahidul Islam",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2026-03-05T09:25:00Z"
+  },
+  {
+    "id": 12,
+    "title": "Account deletion not working",
+    "description": "Delete account button does not remove user account.",
+    "customer": "Mariam Khan",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "2026-03-05T13:15:00Z"
+  }
+]
