@@ -17,24 +17,24 @@ const ticketPromises = fetchInfo()
 
 
 function App() {
+  const [toggle, settoggle] = useState(false)
+  const [inProgress, setInProgress] = useState([])
+  const [resolvedTickets, setResolvedTickests] = useState([])
+  const [selectedid, setSelectedid] = useState({})
 
-const [inProgress,setInProgress] =useState([])
-const[resolvedTickets,setResolvedTickests]=useState([])
-const [selectedid,setSelectedid]=useState({})
+  const handleInprogress = (ticket) => {
+    if (selectedid[ticket.id] === true)
+      return;
+    setSelectedid(select => ({ ...select, [ticket.id]: true }))
+    setInProgress(select => [...select, ticket])
+  }
 
-const handleInprogress= (ticket) => {
-  if(selectedid[ticket.id] === true) 
-    return;
-  setSelectedid(select =>({...select,[ticket.id]:true}))
-  setInProgress(select => [...select,ticket])
-}
-  
-const handleResolved=(ticket) =>{
-  setResolvedTickests(select => [...select,ticket]);
-  setInProgress(select => 
-    select.filter(sel =>sel.id !== ticket.id)
-  )
-}
+  const handleResolved = (ticket) => {
+    setResolvedTickests(select => [...select, ticket]);
+    setInProgress(select =>
+      select.filter(sel => sel.id !== ticket.id)
+    )
+  }
 
 
 
@@ -118,16 +118,64 @@ const handleResolved=(ticket) =>{
 
 
       <Suspense fallback={<h3>Loading.....</h3>}>
-        <CustomersTicket 
-        ticketPromises={ticketPromises} 
-        handleInprogress={handleInprogress}
-        inProgress={inProgress}
-        resolvedTickets={resolvedTickets}
-        handleResolved={handleResolved}
+        <CustomersTicket
+          ticketPromises={ticketPromises}
+          handleInprogress={handleInprogress}
+          inProgress={inProgress}
+          resolvedTickets={resolvedTickets}
+          handleResolved={handleResolved}
 
         ></CustomersTicket>
       </Suspense>
-     
+
+
+
+
+      {/* footer */}
+
+
+      <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
+        <nav>
+          <h6 className="footer-title">Cs-Ticket System</h6>
+          <p className="max-w-xs">A Customer Support (CS) Ticket System
+            serves as the backbone of modern service
+            operations by transforming disorganized
+            customer inquiries from emails, chats, and
+            calls into a structured digital queue. </p>
+        </nav>
+        <nav>
+          <h6 className="footer-title">Company</h6>
+          <a className="link link-hover">About us</a>
+          <a className="link link-hover">Our Mission</a>
+          <a className="link link-hover">Contact Saled</a>
+
+        </nav>
+        <nav>
+          <h6 className="footer-title">Services</h6>
+          <a className="link link-hover">Products & Services</a>
+          <a className="link link-hover">Customer Stories</a>
+          <a className="link link-hover">Download Apps</a>
+        </nav>
+        <nav>
+          <h6 className="footer-title">Information</h6>
+          <a className="link link-hover">Privacy policy</a>
+          <a className="link link-hover">Terms & Conditions</a>
+          <a className="link link-hover">Join Us</a>
+        </nav>
+        <nav>
+          <h6 className="footer-title">Social Links</h6>
+          <a className="link link-hover">@cs-Ticket System</a>
+          <a className="link link-hover">@cs-Ticket System</a>
+          <a className="link link-hover">@cs-Ticket System</a>
+          <a className="link link-hover">support@cst.com</a>
+        </nav>
+
+      </footer>
+      <footer className="footer sm:footer-horizontal footer-center bg-neutral text-neutral-content p-4">
+        <aside>
+          <p>Copyright © {new Date().getFullYear()} -Ticket System.All right reserved</p>
+        </aside>
+      </footer>
 
 
 
