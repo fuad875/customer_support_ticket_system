@@ -5,6 +5,7 @@ import plusImg from './assets/plussign.png'
 import vImg1 from './assets/vector1.png'
 import vImg2 from './assets/vector2.png'
 import CustomerCard from './assets/components/CustomerCard/CustomerCard';
+import { ToastContainer,toast } from 'react-toastify';
 
 const fetchInfo = async () => {
   const res = await fetch('/ticktsinfo.json')
@@ -27,6 +28,7 @@ function App() {
       return;
     setSelectedid(select => ({ ...select, [ticket.id]: true }))
     setInProgress(select => [...select, ticket])
+     toast("Add Successfully");
   }
 
   const handleResolved = (ticket) => {
@@ -34,6 +36,7 @@ function App() {
     setInProgress(select =>
       select.filter(sel => sel.id !== ticket.id)
     )
+      toast("Issue Resolved");
   }
 
 
@@ -177,7 +180,7 @@ function App() {
         </aside>
       </footer>
 
-
+       <ToastContainer></ToastContainer>
 
     </>
   )
