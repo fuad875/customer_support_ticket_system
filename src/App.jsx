@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react';
+import { Suspense, use, useState } from 'react';
 import './App.css';
 import CustomersTicket from './assets/components/CustomersTicket/CustomersTicket';
 import plusImg from './assets/plussign.png'
@@ -18,11 +18,15 @@ const ticketPromises = fetchInfo()
 
 function App() {
 
-const [inProgress,setInProgress] =useState(0);
-const [selectedid,setSelectedid]=useState(null);
+const [inProgress,setInProgress] =useState([])
+const[resolvedTickets,setResolvedTickests]=useState([])
+const [selectedid,setSelectedid]=useState({})
 
-const handleInprogress= (customer.id) =>{
-  setInProgress(inProgress +1);
+const handleInprogress= (ticket) => {
+  if(selectedid[ticket.id] === true) 
+    return;
+  setSelectedid(select =>({...select,[ticket.id]:true}))
+  setInProgress(select => [...select,ticket])
 }
 
   return (
@@ -79,7 +83,7 @@ const handleInprogress= (customer.id) =>{
             <div className="absolute inset-0 flex flex-col justify-center items-center">
               <div className="text-center">
                 <h2 className="text-2xl">In-progress</h2>
-                <span className="text-3xl font-bold">{inProgress}</span>
+                <span className="text-3xl font-bold">{inProgress.length}</span>
               </div>
             </div>
           </div>
@@ -105,7 +109,11 @@ const handleInprogress= (customer.id) =>{
 
 
       <Suspense fallback={<h3>Loading.....</h3>}>
-        <CustomersTicket ticketPromises={ticketPromises} handleInprogress={handleInprogress}></CustomersTicket>
+        <CustomersTicket 
+        ticketPromises={ticketPromises} 
+        handleInprogress={handleInprogress}
+        inProgress={inProgress}
+        ></CustomersTicket>
       </Suspense>
      
 

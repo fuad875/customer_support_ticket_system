@@ -5,7 +5,7 @@ const CustomerCard = ({customer,handleInprogress}) => {
         
             <div className="card bg-base-100  shadow-sm">
               
-                <div onClick={handleInprogress} className="card-body ">
+                <div onClick={()=>handleInprogress(customer)} className="card-body ">
                     <h2 className="card-title">
                         <span>{customer.title}</span>
                         <div className="text-xm font-xs">{customer.status}</div>
