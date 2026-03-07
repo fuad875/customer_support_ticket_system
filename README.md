@@ -1,3 +1,24 @@
+1.What is JSX, and why is it used?
+Ans: JSX is Javascript XML that looks like HTML but Works in javascript.
+The use of JSX is given below.
+The code looks more readable,creates a virtual DOM and enables javascript inside User Interface.
+2.What is the difference between State and Props?
+State: State is internal data of component.it can change within the component.it is use for track dynamic changes like input and clicks
+Props: Props is external data passed to a component.it cannot be changed by the child. it used to pass data from parent to child components.
+
+3.What is the useState hook, and how does it work?
+Ans:useState is a React hook used to add state to functional components.
+it has three state. one state assignthe value of the state.Another state update the value of state.one more state is the starting value of the state.
+
+4.How can you share state between components in React?
+Ans: 1.Lift state up
+     2.Context ApI
+     3.State management libraries
+5.How is event handling done in React?
+Ans: Pass a function as the event handler instead of a string.
+     
+     
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
