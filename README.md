@@ -6,7 +6,10 @@ The code looks more readable,creates a virtual DOM and enables javascript inside
 
 2.What is the difference between State and Props?
 
-Ans:State: State is internal data of component.it can change within the component.it is use for track dynamic changes like input and clicks
+Ans:
+
+State: State is internal data of component.it can change within the component.it is use for track dynamic changes like input and clicks
+
 Props: Props is external data passed to a component.it cannot be changed by the child. it used to pass data from parent to child components.
 
 3.What is the useState hook, and how does it work?
