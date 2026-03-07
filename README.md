@@ -15,6 +15,7 @@ it has three state. one state assignthe value of the state.Another state update 
 Ans: 1.Lift state up
      2.Context ApI
      3.State management libraries
+     
 5.How is event handling done in React?
 Ans: Pass a function as the event handler instead of a string.
      
